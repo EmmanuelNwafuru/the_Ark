@@ -8,6 +8,7 @@ import { ThemeProvider } from "next-themes";
 import Link from "next/link";
 import "./globals.css";
 import Navbar from "./component/Navbar";
+import SideNav from "./component/SideNav";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -39,14 +40,16 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="min-h-screen flex flex-col items-center">
-            <div className="flex-1 w-full flex flex-col gap-20 items-center">
-              <Navbar />
-              <div className="flex flex-col gap-20 max-w-5xl p-5">
-                {children}
+          <main className="h-screen flex flex-col items-center">
+            <Navbar />
+            <div className="flex flex-col justify-between py-5 h-full overflow-y-auto w-full">
+              <div className="grid grid-cols-8 h-full gap-5">
+                <div className="col-span-1">
+                  <SideNav />
+                </div>
+                <div className="col-span-7">{children}</div>
               </div>
-
-              <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-16">
+              <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-5 justify-self-end">
                 <p>
                   Powered by{" "}
                   <a
@@ -61,6 +64,8 @@ export default function RootLayout({
                 <ThemeSwitcher />
               </footer>
             </div>
+
+            {/* </div> */}
           </main>
         </ThemeProvider>
       </body>

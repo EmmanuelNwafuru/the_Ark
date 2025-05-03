@@ -11,7 +11,7 @@ import {
 
 const Navbar = () => {
   return (
-    <nav className="w-full flex justify-between border-b bg-background items-center border-b-foreground/10 h-16 px-10">
+    <nav className="w-full flex justify-between border-b bg-background items-center border-b-foreground/10 py-3 px-10 sticky">
       <div className="py-2 px-4 bg-muted rounded place-content-center place-items-center font-bold">
         the_ARK
       </div>
