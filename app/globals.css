@@ -2,6 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .xxs {
+    @apply text-[10px];
+  }
+  .xs {
+    @apply text-xs tracking-wide;
+  }
+  .XS {
+    @apply text-xs uppercase;
+  }
+  .sm {
+    @apply text-[10px] sm:text-xs lg:text-sm tracking-wide;
+  }
+  .SM {
+    @apply text-[9px] sm:text-xs lg:text-sm tracking-wide;
+  }
+  .base {
+    @apply text-xs sm:text-sm lg:text-base tracking-wide;
+  }
+  .lg {
+    @apply text-sm sm:text-base lg:text-lg tracking-wide;
+  }
+  .xl {
+    @apply text-base sm:text-lg lg:text-xl tracking-wide;
+  }
+  .xxl {
+    @apply text-lg sm:text-2xl lg:text-2xl;
+  }
+  .xxxl {
+    @apply text-xl sm:text-2xl lg:text-3xl;
+  }
+  .xxxxl {
+    @apply text-4xl;
+  }
+  .fiveXL {
+    @apply text-2xl sm:text-4xl lg:text-5xl tracking-tight;
+  }
+  .sixXL {
+    @apply text-6xl;
+  }
+  .sevenXL {
+    @apply text-3xl sm:text-5xl lg:text-7xl tracking-tight;
+  }
+}
+
 @layer base {
   :root {
     --background-light: 0 0% 100%;

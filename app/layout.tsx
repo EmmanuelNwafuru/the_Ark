@@ -42,14 +42,16 @@ export default function RootLayout({
         >
           <main className="h-screen flex flex-col items-center">
             <Navbar />
-            <div className="flex flex-col justify-between py-5 h-full overflow-y-auto w-full">
-              <div className="grid grid-cols-8 h-full gap-5">
-                <div className="col-span-1">
+            <div className="flex flex-col justify-between pt-5 h-full overflow-y-hidden w-full">
+              <div className="grid grid-cols-10 h-full gap-5 overflow-y-hidden">
+                <div className="col-span-2 overflow-y-auto">
                   <SideNav />
                 </div>
-                <div className="col-span-7">{children}</div>
+                <div className="col-span-8 h-full overflow-hidden">
+                  {children}
+                </div>
               </div>
-              <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-5 justify-self-end">
+              <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-5 justify-self-end bg-amber-200">
                 <p>
                   Powered by{" "}
                   <a
