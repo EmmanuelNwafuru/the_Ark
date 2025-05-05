@@ -2,13 +2,17 @@ import Link from "next/link";
 
 const SideNav = () => {
   return (
-    <div className="lg h-full bg-background rounded-r flex flex-col py-5 px-10 gap-3">
+    <div className="lg h-full bg-background rounded-r flex flex-col py-5 px-7 gap-3">
       {[
         { label: "Sermons", redirect: "#" },
         { label: "Ebooks", redirect: "#" },
         { label: "Testimonies", redirect: "#" },
       ].map((nav, i) => (
-        <Link key={i} href={nav.redirect}>
+        <Link
+          key={i}
+          href={nav.redirect}
+          className="hover:bg-muted px-3 py-2 rounded"
+        >
           {nav.label}
         </Link>
       ))}

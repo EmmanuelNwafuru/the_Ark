@@ -9,10 +9,12 @@ import ByPreacherCard from "../component/ByPreacherCard";
 import ByTopicCard from "../component/ByTopicCard";
 import ByChurchCard from "../component/ByChurchCard";
 import BySeriesCard from "../component/BySeriesCard";
+import AudioPlayProgress from "../component/AudioPlayProgress";
 
 export default function Home() {
   return (
     <main className="flex-1 flex flex-col gap-6 px-10 bg-background rounded h-full py-10 overflow-y-auto">
+      <AudioPlayProgress />
       <AudioCard
         title="How God Deals with the Heart"
         subtitle="Remnant Christian Network"
