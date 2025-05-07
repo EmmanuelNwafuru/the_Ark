@@ -1,22 +1,26 @@
 import Link from "next/link";
+import SideNavBtn from "./SideNavBtn";
 
 const SideNav = () => {
   return (
     <div className="lg h-full bg-background rounded-r flex flex-col py-5 px-7 gap-3">
       {[
-        { label: "Sermons", redirect: "#" },
+        { label: "Audio Sermons", redirect: "/audio-sermons" },
         { label: "Ebooks", redirect: "#" },
         { label: "Testimonies", redirect: "#" },
+        {
+          label: "Bless Lives",
+          redirect: "#",
+          children: [
+            { label: "Share Sermons", redirect: "/bless-lives/share-sermons" },
+            { label: "Share Ebooks", redirect: "#" },
+            { label: "Share Testimonies", redirect: "#" },
+          ],
+        },
       ].map((nav, i) => (
-        <Link
-          key={i}
-          href={nav.redirect}
-          className="hover:bg-muted px-3 py-2 rounded"
-        >
-          {nav.label}
-        </Link>
+        <SideNavBtn key={i} nav={nav} />
       ))}
-      <div className="w-full flex justify-between">
+      <div className="w-full flex justify-between px-3 py-2">
         <span>Category</span>
         <select
           name="Preacher"
@@ -31,11 +35,6 @@ const SideNav = () => {
           <option value="">Church</option>
         </select>
       </div>
-      {[{ label: "Bless Lives", redirect: "#" }].map((nav, i) => (
-        <Link key={i} href={nav.redirect}>
-          {nav.label}
-        </Link>
-      ))}
     </div>
   );
 };
