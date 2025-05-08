@@ -30,6 +30,11 @@ const config = {
         off: {
           white: "hsl(var(--off-white))",
         },
+        icon: {
+          // DEFAULT: "hsl(var(--icon-blue))",
+          blue: "hsl(var(--icon-blue))",
+          gray: "hsl(var(--icon-gray))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

@@ -3,10 +3,10 @@ import { EnvVarWarning } from "@/components/env-var-warning";
 import HeaderAuth from "@/components/header-auth";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { hasEnvVars } from "@/utils/supabase/check-env-vars";
-import { Cormorant_Garamond } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import Link from "next/link";
 import "./globals.css";
+import { Roboto } from "next/font/google";
 import Navbar from "./component/Navbar";
 import SideNav from "./component/SideNav";
 
@@ -20,10 +20,10 @@ export const metadata = {
   description: "Download and Share Believers content globally",
 };
 
-const cormGaramond = Cormorant_Garamond({
-  weight: ["300", "400", "500", "600", "700"], // Add what you need
-  subsets: ["latin"], // Required for it to work properly
-  style: ["normal", "italic"], // Optional: only if you need italics
+const roboto = Roboto({
+  weight: ["300", "400", "500", "600", "700"], // Add any weight you use
+  subsets: ["latin"],
+  style: ["normal", "italic"], // Optional
 });
 
 export default function RootLayout({
@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cormGaramond.className} suppressHydrationWarning>
+    <html lang="en" className={roboto.className} suppressHydrationWarning>
       <body className="bg-muted text-foreground">
         <ThemeProvider
           attribute="class"

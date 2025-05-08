@@ -1,43 +1,44 @@
-import { Input } from "@/components/ui/input";
-import {
-  ALargeSmall,
-  ImageIcon,
-  PictureInPicture2Icon,
-  Plus,
-  PlusSquare,
-  Search,
-  Upload,
-} from "lucide-react";
+import { Search } from "lucide-react";
+import { FaSearch, FaUser } from "react-icons/fa";
+import { FaUpload } from "react-icons/fa6";
+import { FcSearch } from "react-icons/fc";
+import { MdSearch } from "react-icons/md";
 
-const Navbar = () => {
+export default function Navbar() {
   return (
-    <nav className="w-full flex justify-between border-b bg-background items-center border-b-foreground/10 py-3 px-10 sticky">
-      <div className="py-2 px-4 bg-muted rounded place-content-center place-items-center font-bold">
-        the_ARK
+    <nav className="w-full flex items-center justify-between px-14 py-3 bg-background shadow-sm">
+      {/* Left: Logo */}
+      <div className="flex items-center space-x-2">
+        <div className="text-blue-600 text-xl font-bold">+</div>
+        <span className="font-semibold text-lg">the_Ark</span>
       </div>
-      <div className="relative w-1/4 rounded-full overflow-hidden">
-        <Input
-          className="w-full focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:outline-none rounded-full placeholder:italic bg-muted pl-7 tracking-wide"
-          placeholder="What would you like to listen to"
-        />
-        <div
-          role="button"
-          className="absolute right-0 top-0 h-full bg-muted hover:bg-background px-5 place-content-center place-items-center transition"
-        >
-          <Search className="w-5 h-auto" strokeWidth={1} />
+
+      {/* Center: Search */}
+      <div className="flex-1 mx-6 max-w-2xl">
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Search sermons, ebooks, testimonies..."
+            className="w-full pl-4 pr-10 py-2 rounded-full bg-muted-foreground/10 text-sm placeholder:italic focus:outline-none placeholder:text-muted-foreground/50 tracking-wider"
+          />
+          <FaSearch
+            strokeWidth={1}
+            className="absolute right-3 w-4 h-auto top-1/2 transform -translate-y-1/2 text-gray-400"
+          />
         </div>
       </div>
-      <div className="flex justify-between items-center gap-3">
-        <div className="bg-muted px-5 py-2 flex rounded">
-          <Plus strokeWidth={1} className="w-5" />
-          Upload Icon
-        </div>
-        <div className="rounded-full bg-muted w-10 h-10 place-content-center place-items-center">
-          <ImageIcon strokeWidth={1} />
-        </div>
+
+      {/* Right: Buttons */}
+      <div className="flex items-center space-x-6">
+        <button className="flex items-center space-x-2 bg-icon-blue hover:scale-[1.03] text-white px-4 py-2 rounded-md text-base transition">
+          <FaUpload className="text-white" />
+          <span>Upload</span>
+        </button>
+        <button className="flex items-center space-x-1 text-base text-muted-foreground hover:underline transition">
+          <FaUser />
+          <span>Sign In</span>
+        </button>
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}
